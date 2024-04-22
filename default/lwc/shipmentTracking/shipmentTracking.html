@@ -1,0 +1,18 @@
+<template>
+    <lightning-card  variant="Narrow"  title={cardTitle} icon-name="custom:custom54">
+        <div class="slds-m-left_small">
+            <!--Show Spinner-->
+            <div lwc:if={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+            <!--Show Success Data-->
+            <span lwc:if={responseData}>{shipmentStatus}
+                <span class={respVariant} > {responseData}</span>
+            </span>
+            <!--Show Error/Exception Data-->
+            <span lwc:elseif={exceptionData}>{errorOccured}
+                <span class={respVariant} > {exceptionData}</span>
+            </span>
+        </div>
+    </lightning-card>
+</template>
